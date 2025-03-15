@@ -1,7 +1,18 @@
 {
-  "build": {
-    "env": {
-      "VERCEL_GIT_COMMIT_REF": "gh-pages"
+  "version": 2,
+  "builds": [
+    {
+      "src": "nuxt.config.ts",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": ".output/public"
+      }
     }
-  }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
 }
